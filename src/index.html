@@ -1,0 +1,11 @@
+---
+layout: layout.html
+---
+<h1>myblog</h1>
+{% for post in collections.post %}
+    <h2><a href="{{post.url}}"></a>{{post.data.title}}</h2>
+    <p>
+        {{post.content}}
+    </p>
+    
+{% endfor %}
