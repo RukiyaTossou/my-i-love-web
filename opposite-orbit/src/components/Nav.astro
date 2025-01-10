@@ -1,39 +1,54 @@
 ---
 
 ---
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      const currentUrl = window.location.pathname;
+
+      navLinks.forEach(link => {
+        // Handle the root URL separately
+        if (currentUrl === '/' && link.getAttribute('href') === '/') {
+          link.classList.add('active');
+        } 
+        // Match other URLs, ensuring trailing slashes are accounted for
+        else if (link.getAttribute('href') === currentUrl) {
+          link.classList.add('active');
+        }
+      });
+    });
+</script>
+
 <nav aria-label="primary">
- 
     <ul>
-        <li>
-            <div class="navbar">
-                <a href="/">home </a>
-            </div>
-        </li>
-        <li>
-            <a href="/aboutme/">Aboutme</a>
-        </li>
-        <li>
-            <a href="/posts/">FDND Posts</a>
-        </li>
-        <li>
-            <a href="/portfolio/">portfolio</a>
-        </li>
-        </ul>
-    </nav>
+        <li><a  href="/" >home </a> </li>
+        <li> <a href="/aboutme/">Aboutme</a></li>
+        <li><a href="/posts/">FDND Posts</a></li>
+        <li><a href="#">portfolio</a></li>
+    </ul>
+</nav>
 
     <style>
         nav {
             padding: 0;
         }
-nav ul {
-    padding: 0;
-    display: flex;
-    list-style-type: none;
-  
-}
- li a {
-    text-decoration: none;  
-    margin-right: 0.5rem;
-}
-
-    </style>
+        nav ul {
+            padding: ;
+            margin: 0;
+            display: flex;
+            list-style-type: none;
+        
+        }
+        li a {
+            text-decoration: none;  
+            margin-right: 0.5rem;
+            color: #fff;
+         
+        }
+        li a:hover {
+            background-color: #4564df
+        }
+        .active {
+            background-color: rgb(4, 8, 8);
+        }
+</style>
